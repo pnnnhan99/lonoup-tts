@@ -2,8 +2,8 @@
 Upload TTS/ASR models from the local `public/` directory to Hugging Face Hub.
 
 Usage:
-  pip install huggingface_hub
-  python hf-server/upload_models.py your-username/loopup-tts-models
+  pip install "loopup-tts[upload]"
+  python -m loopup_tts.upload_models your-username/loopup-tts-models
 
 Requires a valid HF token (run `huggingface-cli login` or set HF_TOKEN).
 """
@@ -25,7 +25,7 @@ MODEL_DIRS = {
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: python hf-server/upload_models.py <hf_repo_id>")
+        print("Usage: python -m loopup_tts.upload_models <hf_repo_id>")
         sys.exit(1)
 
     repo_id = sys.argv[1]

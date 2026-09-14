@@ -12,12 +12,11 @@ FROM python:3.12-slim
 WORKDIR /app
 
 COPY --from=builder /app/dist ./dist
-COPY hf-server/requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
-
-COPY hf-server/app.py ./
+COPY pyproject.toml README.md ./
+COPY loopup_tts/ ./loopup_tts/
+RUN pip install --no-cache-dir .
 
 ENV PORT=7860
 EXPOSE 7860
 
-CMD ["gunicorn", "-b", "0.0.0.0:7860", "-w", "2", "--timeout", "120", "app:app"]
+CMD ["gunicorn", "-b", "0.0.0.0:7860", "-w", "2", "--timeout", "120", "loopup_tts.app:app"]
