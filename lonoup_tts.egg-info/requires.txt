@@ -1,0 +1,6 @@
+Flask<4,>=3
+gunicorn<24,>=22
+requests<3,>=2
+
+[upload]
+huggingface_hub>=0.20
