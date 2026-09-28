@@ -1,5 +1,5 @@
 ---
-title: Loopup TTS
+title: Lonoup TTS
 emoji: 🗣️
 colorFrom: purple
 colorTo: blue
@@ -7,24 +7,24 @@ sdk: docker
 pinned: false
 ---
 
-# LOOPUP-TTS
+# LONOUP-TTS
 
-A browser-based Text-to-Speech and Speech Recognition application powered by Piper TTS, Sherpa-ONNX, and ONNX Runtime Web. Generate high-quality speech and transcribe audio directly in your browser without requiring a server for inference. Supports **Vietnamese** (home page), **other languages** (English, Indonesian), and **ASR** (Automatic Speech Recognition) on separate pages. Live demo: https://tts.loopup.io.vn
+A browser-based Text-to-Speech and Speech Recognition application powered by Piper TTS, Sherpa-ONNX, and ONNX Runtime Web. Generate high-quality speech and transcribe audio directly in your browser without requiring a server for inference. Supports **Vietnamese** (home page), **other languages** (English, Indonesian), and **ASR** (Automatic Speech Recognition) on separate pages. Live demo: https://tts.lonoup.io.vn
 
 ## Python Package (Server)
 
-`loopup-tts` is distributed as a Python package (`loopup_tts`) containing the Flask server that serves the built SPA and proxies model requests to the Hugging Face Hub.
+`lonoup-tts` is distributed as a Python package (`lonoup_tts`) containing the Flask server that serves the built SPA and proxies model requests to the Hugging Face Hub.
 
 ### Install from GitHub
 
 ```bash
-pip install git+https://github.com/pnnnhan99/loopup-tts.git
+pip install git+https://github.com/pnnnhan99/lonoup-tts.git
 ```
 
 Install from a specific branch or commit:
 
 ```bash
-pip install git+https://github.com/pnnnhan99/loopup-tts.git@refactor/package
+pip install git+https://github.com/pnnnhan99/lonoup-tts.git@refactor/package
 ```
 
 ### Usage
@@ -32,26 +32,26 @@ pip install git+https://github.com/pnnnhan99/loopup-tts.git@refactor/package
 Start the server with gunicorn:
 
 ```bash
-gunicorn -b 0.0.0.0:7860 "loopup_tts.app:app"
+gunicorn -b 0.0.0.0:7860 "lonoup_tts.app:app"
 ```
 
 Or run it directly:
 
 ```bash
-python -m loopup_tts.app
+python -m lonoup_tts.app
 ```
 
 Or import it in your own application:
 
 ```python
-from loopup_tts import app
+from lonoup_tts import app
 ```
 
 ### Upload models to Hugging Face Hub
 
 ```bash
-pip install "loopup-tts[upload]"
-python -m loopup_tts.upload_models your-username/loopup-tts-models
+pip install "lonoup-tts[upload]"
+python -m lonoup_tts.upload_models your-username/lonoup-tts-models
 ```
 
 ## Features

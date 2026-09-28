@@ -1,9 +1,9 @@
 """
-Flask server for LOOPUP-TTS on Hugging Face Spaces.
+Flask server for LONOUP-TTS on Hugging Face Spaces.
 Serves the built Vue SPA and proxies model requests to Hugging Face Hub.
 
 Environment variables:
-  HF_MODEL_REPO - Hugging Face repo ID for model storage (e.g. "username/loopup-tts-models")
+  HF_MODEL_REPO - Hugging Face repo ID for model storage (e.g. "username/lonoup-tts-models")
 """
 
 import os

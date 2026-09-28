@@ -34,10 +34,10 @@ export const DEFAULT_MODEL = {
 };
 
 /** Default ASR model name when none selected. Local: public/asr-model/{name}/. Production: R2 asr/{name}/. */
-export const DEFAULT_ASR_MODEL = 'loopup-stt';
+export const DEFAULT_ASR_MODEL = 'lonoup-stt';
 
 /** Fallback ASR model list when /api/asr/models fails or returns empty (e.g. production before R2 list works). */
-export const ASR_MODELS_FALLBACK = ['loopup-stt-v2','sherpa-onnx-zipformer-vi-int8-2025-10-16'];
+export const ASR_MODELS_FALLBACK = ['lonoup-stt-v2','sherpa-onnx-zipformer-vi-int8-2025-10-16'];
 
 /** localStorage key for user-selected ASR model. */
 export const ASR_MODEL_STORAGE_KEY = 'asr-selected-model';

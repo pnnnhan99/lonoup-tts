@@ -1,6 +1,6 @@
-"""LOOPUP-TTS Python package.
+"""LONOUP-TTS Python package.
 
-Serves the built LOOPUP-TTS SPA and proxies model requests to the
+Serves the built LONOUP-TTS SPA and proxies model requests to the
 Hugging Face Hub.
 """
 

@@ -13,10 +13,10 @@ WORKDIR /app
 
 COPY --from=builder /app/dist ./dist
 COPY pyproject.toml README.md ./
-COPY loopup_tts/ ./loopup_tts/
+COPY lonoup_tts/ ./lonoup_tts/
 RUN pip install --no-cache-dir .
 
 ENV PORT=7860
 EXPOSE 7860
 
-CMD ["gunicorn", "-b", "0.0.0.0:7860", "-w", "2", "--timeout", "120", "loopup_tts.app:app"]
+CMD ["gunicorn", "-b", "0.0.0.0:7860", "-w", "2", "--timeout", "120", "lonoup_tts.app:app"]

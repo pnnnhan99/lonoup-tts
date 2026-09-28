@@ -22,4 +22,4 @@ jobs:
         pip install ".[upload]"
     - name: Analysing the code with pylint
       run: |
-        pylint loopup_tts/
+        pylint lonoup_tts/
