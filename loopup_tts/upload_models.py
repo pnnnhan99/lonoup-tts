@@ -24,6 +24,7 @@ MODEL_DIRS = {
 
 
 def main():
+    """Upload models to Hugging Face Hub."""
     if len(sys.argv) < 2:
         print("Usage: python -m loopup_tts.upload_models <hf_repo_id>")
         sys.exit(1)
@@ -35,7 +36,7 @@ def main():
     try:
         api.create_repo(repo_id, repo_type="model", exist_ok=True)
         print(f"Repo ready: {repo_id}")
-    except Exception as e:
+    except Exception as e:  # pylint: disable=broad-exception-caught
         print(f"Creating repo failed (continuing): {e}")
 
     total = 0
@@ -52,7 +53,8 @@ def main():
             rel = f.relative_to(src_dir.parent)
             dest = f"{prefix}/{rel.as_posix()}"
             print(f"  -> {dest} ({f.stat().st_size / 1e6:.1f} MB)")
-            api.upload_file(path_or_fileobj=str(f), path_in_repo=dest, repo_id=repo_id, repo_type="model")
+            api.upload_file(path_or_fileobj=str(f), path_in_repo=dest,
+                            repo_id=repo_id, repo_type="model")
             total += 1
 
     print(f"\nDone. Uploaded {total} file(s) to {repo_id}")
@@ -60,3 +62,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+

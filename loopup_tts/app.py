@@ -53,7 +53,7 @@ def api_models():
             if f.get("type") == "file" and f["path"].endswith(".onnx.json")
         })
         return jsonify({"models": models})
-    except Exception as e:
+    except Exception as e:  # pylint: disable=broad-exception-caught
         logger.exception("Error listing models")
         return jsonify({"error": str(e)}), 500
 
@@ -69,7 +69,7 @@ def api_piper_lang_models(lang):
             if f.get("type") == "file" and f["path"].endswith(".onnx.json")
         })
         return jsonify({"models": models})
-    except Exception as e:
+    except Exception as e:  # pylint: disable=broad-exception-caught
         logger.exception("Error listing piper models for %s", lang)
         return jsonify({"error": str(e)}), 500
 
@@ -87,7 +87,7 @@ def api_asr_models():
             if f.get("type") == "file" and f["path"].startswith("asr/")
         }
         return jsonify({"models": sorted(dirs)})
-    except Exception as e:
+    except Exception as e:  # pylint: disable=broad-exception-caught
         logger.exception("Error listing ASR models")
         return jsonify({"error": str(e)}), 500
 
